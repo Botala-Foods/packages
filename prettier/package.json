@@ -1,6 +1,6 @@
 {
   "name": "prettier-config-botala",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "index.json",
   "author": "Kieran Gill <kieran.gill1997@gmail.com>",
   "license": "MIT"
