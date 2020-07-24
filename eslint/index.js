@@ -91,13 +91,13 @@ module.exports = {
       { blankLine: "always", prev: "*", next: "export" },
       { blankLine: "always", prev: "export", next: "*" },
     ],
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      {
+        functions: false,
+        classes: true,
+        variables: true
+      }
+    ]
   },
-  "@typescript-eslint/no-use-before-define": [
-    "error",
-    {
-      functions: false,
-      classes: true,
-      variables: true
-    }
-  ]
 };
