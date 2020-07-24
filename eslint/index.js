@@ -1,8 +1,8 @@
 module.exports = {
   extends: ["airbnb-typescript/base"],
   rules: {
-    "@typescript-eslint/semi": ["error", "never"],
-    "@typescript-eslint/indent": ["error", 4],
+    "@typescript-eslint/semi": ["warn", "never"],
+    "@typescript-eslint/indent": ["warn", 4],
     "import/prefer-default-export": "off",
     "import/no-default-export": "error",
     "implicit-arrow-linebreak": "off",
@@ -27,7 +27,7 @@ module.exports = {
         format: ["camelCase"],
         leadingUnderscore: "require",
       },
-
+      { selector: "variable", format: ["PascalCase", "camelCase", "UPPER_CASE"] },
       { selector: "typeLike", format: ["PascalCase"] },
       { selector: "typeParameter", format: ["PascalCase"] },
       { selector: "enumMember", format: ["PascalCase"] },
@@ -39,17 +39,17 @@ module.exports = {
     ],
     "arrow-parens": ["warn", "as-needed"],
     "max-len": [
-      "error",
+      "warn",
       {
         code: 100,
       },
     ],
-    quotes: ["error", "single"],
-    "comma-dangle": ["error", "always-multiline"],
-    "object-curly-spacing": ["error", "always"],
+    quotes: ["warn", "single"],
+    "comma-dangle": ["warn", "always-multiline"],
+    "object-curly-spacing": ["warn", "always"],
     "arrow-body-style": ["off"],
     "linebreak-style": 0,
-    "capitalized-comments": ["error"],
+    "capitalized-comments": ["warn"],
     "prefer-destructuring": [
       "error",
       {
@@ -71,7 +71,7 @@ module.exports = {
     ],
     "no-underscore-dangle": "off",
     "padding-line-between-statements": [
-      "error",
+      "warn",
       { blankLine: "always", prev: "*", next: "return" },
       // 1A. Blank line after const or let
       { blankLine: "always", prev: ["const", "let"], next: "*" },
@@ -92,4 +92,12 @@ module.exports = {
       { blankLine: "always", prev: "export", next: "*" },
     ],
   },
+  "@typescript-eslint/no-use-before-define": [
+    "error",
+    {
+      functions: false,
+      classes: true,
+      variables: true
+    }
+  ]
 };
